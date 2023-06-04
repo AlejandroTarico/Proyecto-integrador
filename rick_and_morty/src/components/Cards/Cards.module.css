@@ -1,0 +1,8 @@
+.cardFLex {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 70px;
+    justify-content: center;
+    margin: 50px;
+}
