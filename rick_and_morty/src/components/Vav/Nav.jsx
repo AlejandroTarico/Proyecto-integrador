@@ -12,11 +12,12 @@ const Nav = (props) => {
           <nav>
             <NavLink to='/about'>About</NavLink>
             <NavLink to='/home'>Home</NavLink>     
+            <NavLink to='/favorites'>Favorites</NavLink>     
           </nav>
           <SearchBar onSearch={props.onSearch} />
           <div className={style.logContainer}>
             <Link to='/' className={style.logOut} >LogOut</Link>     
-          </div>
+          </div> 
       </div>
 
     </>
