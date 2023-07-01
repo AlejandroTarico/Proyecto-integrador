@@ -1,0 +1,40 @@
+.containerCard {
+    border: solid 5px;
+    border-color: rgba(19, 64, 85, 0.89);
+    border-radius: 15px;
+    background-color: #d9d9e7;
+    text-shadow: 4px 1px 6px black;
+    box-shadow: 7px 8px 6px 3px rgba(98, 181, 219, 0.719);
+    margin: 10px;
+    padding: 15px;
+    width: 16%;
+}
+.containerCard:hover {
+    width: 18%;
+    transition: .5s;
+}
+img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 3px 3px 6px 3px rgb(63 77 84 / 72%);
+}
+.containerText {
+    display: flex;
+    justify-content: space-around;
+}
+.cierreCard {
+    height: 100%;
+    margin-left: 50px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 15%;
+    cursor: pointer;
+}
+.cierreCard:hover {
+    background-color: rgb(121, 22, 146);    
+}
+.tamañoText {
+    font-size: 100%;
+}
