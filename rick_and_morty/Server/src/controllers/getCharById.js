@@ -1,23 +1,54 @@
-const express = require('express');
+//const express = require('express');
 const axios = require('axios');
 
 const URL = "https://rickandmortyapi.com/api/character/";
 
 
-function getCharById(req, res){
-    const {id} = req.params;
-    axios(`${URL}/${id}`).then(({data})=>{
-        const { id, status, name, species, origin, image, gender} = data;
+const getCharById = async () => {
+    try {
+        const {id} = req.params;
+        const { status, name, species, origin, image, gender} = (await axios(URL/id)).data;
         const  character = { id, status, name, species, origin, image, gender};
-        return name ? res.json(character) : res.status(404).json({message: error});
-    }).catch((reason) => {
-        return res.status(500).send({message: reason});
-    })
+        return character.name ? res.status(200).json(character) :
+        res.status(404).send('Not found');
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
 }
+
 
 
 module.exports = getCharById;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Con express
+// function getCharById(req, res){
+//     const {id} = req.params;
+//     axios(`${URL}/${id}`).then(({data})=>{
+//         const { id, status, name, species, origin, image, gender} = data;
+//         const  character = { id, status, name, species, origin, image, gender};
+//         return name ? res.json(character) : res.status(404).json({message: error});
+//     }).catch((reason) => {
+//         return res.status(500).send({message: reason});
+//     })
+// }
 
 
 
