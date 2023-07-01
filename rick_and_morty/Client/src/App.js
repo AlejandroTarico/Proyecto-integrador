@@ -69,11 +69,9 @@ function App() {
          const {data} = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('¡No hay personajes con este ID!');
-         }
+         } 
       } catch (error) {
-         console.log(error);
+         window.alert('¡No hay personajes con este ID!');
       }
    }
 
