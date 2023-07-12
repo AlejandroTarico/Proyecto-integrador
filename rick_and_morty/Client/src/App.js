@@ -28,11 +28,11 @@ function App() {
    // }
 
       //cons ASync
-      const login = async (userData) => {
+      async function login (userData) {
          try {
             const { email, password } = userData;
             const URL = 'http://localhost:3001/rickandmorty/login/';
-            const {data} = await axios(URL + `?email=${email}&password=${password}`);
+            const {data} = await axios(URL + `?email=${email}&password=${password}`)
             const { access } = data;
             setAccess(data);
             access && navigate('/home');
@@ -69,22 +69,26 @@ function App() {
          const {data} = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
-         } 
+         } else {
+            window.alert('¡No hay personajes con este ID!');
+         }
       } catch (error) {
+         // console.log(error);
          window.alert('¡No hay personajes con este ID!');
+
       }
    }
 
-   const [isLoggedIn, setIsLoggedIn] = useState(false);
+   // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-   const handleLogout = () => {
-      setIsLoggedIn(false);
-   };
+   // const handleLogout = () => {
+   //    setIsLoggedIn(false);
+   // };
 
 
    const onClose = (id) => {
       setCharacters(characters.filter((char) => {
-         return char.id !== Number(id);
+         return char.id !== id;
       }));
    };
    const location = useLocation();  // Con esto controlo que el nav no se vea cuando estoy en la pagina del login
