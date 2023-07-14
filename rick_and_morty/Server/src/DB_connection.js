@@ -1,8 +1,8 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME } = process.env;
-const FavoriteModel = require('./models/Favorite');
 const UserModel = require('./models/User');
+const FavoriteModel = require('./models/Favorite');
 
 // EJERCICIO 03
 // A la instancia de Sequelize le falta la URL de conexión. ¡Agrégala!
@@ -14,12 +14,11 @@ const sequelize = new Sequelize(
    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
    { logging: false, native: false } // logging: false lo que hace es indicarle a secalize que no muetre todos los datos que se generan por cada vez que se ejecute en la consola  
 );
-
 // EJERCICIO 05
 // Debajo de este comentario puedes ejecutar la función de los modelos.
-FavoriteModel(sequelize);
-//
 UserModel(sequelize);
+//
+FavoriteModel(sequelize);
 //
 
 // Ejercicio 06
