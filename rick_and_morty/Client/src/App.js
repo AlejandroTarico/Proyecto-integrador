@@ -1,4 +1,4 @@
-import './App.css';
+import style from './App.module.css';
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Vav/Nav.jsx';
 import { useState, useEffect} from 'react';
@@ -94,7 +94,7 @@ function App() {
    const location = useLocation();  // Con esto controlo que el nav no se vea cuando estoy en la pagina del login
    const isLoginPage = location.pathname === '/';
    return (
-      <div className='App'>
+      <div className={style.imageApp}>
       {/* {isLoggedIn ?  */}
          {!isLoginPage && <Nav onSearch={onSearch} />}
           {/* : ( */}

@@ -18,6 +18,7 @@ nav a {
 nav a.active {
     border-bottom: solid 2px;
     border-color: white;
+    padding-bottom: 10px;
 }
 
 .logOut {

@@ -10,9 +10,9 @@ const Nav = (props) => {
           {/* <Link to='/about' className={style.textNav} >About</Link>
           <Link to='/home' className={style.textNav} >Home</Link>  */}
           <nav>
-            <NavLink to='/about'>About</NavLink>
-            <NavLink to='/home'>Home</NavLink>     
-            <NavLink to='/favorites'>Favorites</NavLink>     
+            <NavLink to='/about' className={({ isActive }) => isActive ? style.active : ''}>About</NavLink>
+            <NavLink to='/home' className={({ isActive }) => isActive ? style.active : ''}>Home</NavLink>     
+            <NavLink to='/favorites' className={({ isActive }) => isActive ? style.active : ''}>Favorites</NavLink>     
           </nav>
           <SearchBar onSearch={props.onSearch} />
           <div className={style.logContainer}>
