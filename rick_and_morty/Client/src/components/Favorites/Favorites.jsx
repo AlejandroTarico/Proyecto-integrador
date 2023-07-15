@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {connect, useDispatch} from 'react-redux';
 import Card from "../Card/Card";
+import style from './Favorites.module.css'
 import { filterCards, orderCards } from '../../redux/actions';
 
 const Favorites = (props) => {
@@ -30,19 +31,23 @@ const Favorites = (props) => {
                 <option value="Genderless">Genderless</option>
                 <option value="unknown">Unknown</option>
             </select>
-            {myFavorites.map((char) => {
-                return (
-                    <Card
-                        key= {char.id}
-                        id= {char.id}
-                        name= {char.name}
-                        status= {char.species}
-                        gender= {char.gender}
-                        origin= {char.origin.name}
-                        image= {char.image}
-                    /> 
-                )
-            })}
+            <div className={style.containerText}>
+                {myFavorites.map((char) => {
+                    console.log(char);
+                    return (
+                        <Card
+                            key= {char.id}
+                            id= {char.id}
+                            name= {char.name}
+                            status= {char.species}
+                            gender= {char.gender}
+                            origin= {char.origin}
+                            image= {char.image}
+                            outClose= {true}
+                        /> 
+                    )
+                })}
+            </div>
         </div>
     )
 }

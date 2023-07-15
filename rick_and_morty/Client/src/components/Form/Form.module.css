@@ -14,7 +14,7 @@ form {
     justify-content: center;
     padding: 55px 0 55px 0;
 }
-img {
+.imgStyle {
     background-image: url(https://media.vandalsports.com/i/640x360/5-2022/202251816546_1.jpg);
     height: 150px;
     background-position: center;

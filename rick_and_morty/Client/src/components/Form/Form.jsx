@@ -31,7 +31,7 @@ const Form = (props) => {
   return (
     <form onSubmit={submitHandler}>
         <div className={style.targett}>
-            <img  alt="" />
+            <img className={style.imgStyle} alt="" />
             <label htmlFor="email">Email</label>
             <input type="text" name="email" value={userData.email} onChange={handleChange} />
             {errors.email_1 ?

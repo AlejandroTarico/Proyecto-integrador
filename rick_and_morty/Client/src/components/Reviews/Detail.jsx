@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect  } from 'react';
 import { useParams } from 'react-router-dom';
+import style from './Detail.module.css'
 const Detail = () => {
   const {id} = useParams();
   const [characters, setCharacter] = useState({});
@@ -19,12 +20,16 @@ const Detail = () => {
  
   return (
     characters ?
-    <div>
-      <h2>{characters.name}</h2>
-      <h2 >{characters.status}</h2>
-      <h2 >{characters.species}</h2>
-      <h2 >{characters.gender}</h2>
-      <h2 >{characters.origin?.name}</h2>
+    <div className={style.containerCard}>
+      <div className={style.textoDesing}>
+        <h2>{characters.name}</h2>
+        <h2 >{characters.status}</h2>  
+      </div>
+      <div className={style.textoDesing}>
+        <h2 >{characters.species}</h2>
+        <h2 >{characters.gender}</h2>
+        <h2 >{characters.origin?.name}</h2>
+      </div>
       <img  src={characters.image} alt='' />
     </div> : <h1>Loading...</h1>
   )

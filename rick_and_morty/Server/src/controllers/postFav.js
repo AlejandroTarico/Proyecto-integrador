@@ -10,8 +10,8 @@ const postFav = async (req, res) => {
             res.status(401).json({message: "Faltan datos"});
         }
         await Favorite.findOrCreate({
-            where: { name },
-            defaults: {id, origin, status, image, species, gender }
+            where: { id },
+            defaults: {name, origin, status, image, species, gender }
         });
       
         const arrayFav = await Favorite.findAll();

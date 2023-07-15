@@ -1,0 +1,18 @@
+.containerCard {
+    border: solid 5px;
+    border-color: rgba(19, 64, 85, 0.89);
+    border-radius: 15px;
+    background-color: rgb(215, 219, 160);
+    box-shadow: 7px 8px 6px 3px rgba(98, 181, 219, 0.719);
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    padding: 15px;
+    width: 50%;
+}
+
+.textoDesing {
+    display: flex;
+    justify-content: space-around;
+    color: rgb(76 142 175);
+}

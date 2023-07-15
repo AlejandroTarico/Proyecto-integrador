@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 
 function Card(props) {
-   const{id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites}= props; //Estoy haciendo un distroctoring al props
+   const{id, name, status, species, gender, origin, image, onClose, addFav, removeFav, myFavorites, outClose}= props; //Estoy haciendo un distroctoring al props
    
    const [isFav, setIsFav] = useState(false)
 
@@ -37,7 +37,7 @@ function Card(props) {
          <Link to={`/detail/${id}`}>
             <h2 className={style.tamañoText}>{name}</h2>
          </Link>
-            <button className={style.cierreCard} onClick={()=>{onClose(id);} }>X</button>
+           {outClose ? null : <button className={style.cierreCard} onClick={()=>{onClose(id);} }>X</button>} 
          </div>
          <img className={style.img} src={image} alt='' />
          <div className={style.containerText}>
